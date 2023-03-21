@@ -1,4 +1,46 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.1.6"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -12,17 +54,15 @@
       }
     ]
   },
-  "description": "Basic overview of linux host metrics, based on node_exporter",
-  "editable": true,
+  "editable": false,
   "gnetId": 10180,
   "graphTooltip": 1,
-  "id": 1,
-  "iteration": 1679412332047,
+  "id": null,
+  "iteration": 1557475338508,
   "links": [],
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -47,10 +87,6 @@
       "datasource": "Prometheus",
       "decimals": 0,
       "description": "Time since last boot",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -95,13 +131,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -144,10 +173,6 @@
       ],
       "datasource": "Prometheus",
       "description": "Number of processors",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -192,13 +217,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -240,10 +258,6 @@
       "datasource": "Prometheus",
       "decimals": 0,
       "description": "Amount of memory",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "decbytes",
       "gauge": {
         "maxValue": 100,
@@ -288,13 +302,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -336,10 +343,6 @@
       ],
       "datasource": "Prometheus",
       "decimals": 1,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -384,20 +387,13 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "Value",
       "targets": [
         {
           "expr": "1 - avg(irate(node_cpu_seconds_total{mode=\"idle\",instance=~\"$host\"}[5m]))",
@@ -432,10 +428,6 @@
       ],
       "datasource": "Prometheus",
       "decimals": 1,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -480,13 +472,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -528,10 +513,6 @@
       "datasource": "Prometheus",
       "decimals": 1,
       "description": "Free diskspace",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -576,13 +557,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -625,10 +599,6 @@
       "datasource": "Prometheus",
       "decimals": null,
       "description": "Network traffic in the last hour",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "decbytes",
       "gauge": {
         "maxValue": 100,
@@ -673,13 +643,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -721,10 +684,6 @@
       "datasource": "Prometheus",
       "decimals": null,
       "description": "Network traffic in the last hour",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "format": "decbytes",
       "gauge": {
         "maxValue": 100,
@@ -769,13 +728,6 @@
       ],
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "sparkline": {
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": false,
@@ -808,10 +760,6 @@
     {
       "columns": [],
       "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "fontSize": "100%",
       "gridPos": {
         "h": 4,
@@ -824,13 +772,6 @@
       "pageSize": null,
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "scroll": true,
       "showHeader": true,
       "sort": {
@@ -840,7 +781,6 @@
       "styles": [
         {
           "alias": "Available",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -857,7 +797,6 @@
         },
         {
           "alias": "Mount",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -874,7 +813,6 @@
         },
         {
           "alias": "Type",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -891,7 +829,6 @@
         },
         {
           "alias": "",
-          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -917,11 +854,10 @@
       ],
       "title": "Disk (Free)",
       "transform": "table",
-      "type": "table-old"
+      "type": "table"
     },
     {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -940,19 +876,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 24,
         "x": 0,
         "y": 6
       },
-      "hiddenSeries": false,
       "id": 14,
       "legend": {
         "alignAsTable": true,
@@ -971,23 +901,12 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
       "percentage": true,
-      "pluginVersion": "7.5.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1045,8 +964,7 @@
       }
     },
     {
-      "collapsed": false,
-      "datasource": null,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1054,396 +972,366 @@
         "y": 12
       },
       "id": 24,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fill": 1,
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 13
+          },
+          "id": 16,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "repeatDirection": "v",
+          "scopedVars": {
+            "host": {
+              "selected": true,
+              "text": "pg1.kred.no:9100",
+              "value": "pg1.kred.no:9100"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_MemFree_bytes{instance=~\"$host\"} > 0",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "Free",
+              "refId": "A"
+            },
+            {
+              "expr": "node_memory_MemTotal_bytes{instance=~\"$host\"} > 0",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "Total",
+              "refId": "B"
+            },
+            {
+              "expr": "node_memory_MemAvailable_bytes{instance=~\"$host\"} > 0",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Available",
+              "refId": "C"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Memory | $host",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "Memory Details",
       "type": "row"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 13
-      },
-      "hiddenSeries": false,
-      "id": 16,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": true,
-      "pluginVersion": "7.5.10",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": "host",
-      "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "node_memory_MemFree_bytes{instance=~\"$host\"} > 0",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Free",
-          "refId": "A"
-        },
-        {
-          "expr": "node_memory_MemTotal_bytes{instance=~\"$host\"} > 0",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Total",
-          "refId": "B"
-        },
-        {
-          "expr": "node_memory_MemAvailable_bytes{instance=~\"$host\"} > 0",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "Available",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Memory | $host",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "bytes",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
-      "datasource": null,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 13
       },
       "id": 28,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fill": 2,
+          "gridPos": {
+            "h": 6,
+            "w": 14,
+            "x": 0,
+            "y": 4
+          },
+          "id": 18,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sort": "min",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "repeatDirection": "v",
+          "scopedVars": {
+            "host": {
+              "selected": true,
+              "text": "ansible-ctrl1.kred.no:9100",
+              "value": "ansible-ctrl1.kred.no:9100"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_network_receive_bytes_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m])  > 0",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "IN ({{device}})",
+              "refId": "A"
+            },
+            {
+              "expr": "- irate(node_network_transmit_bytes_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) < 0",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "OUT ({{device}})",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Network Traffic | $host",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": null,
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fill": 2,
+          "gridPos": {
+            "h": 6,
+            "w": 10,
+            "x": 14,
+            "y": 4
+          },
+          "id": 43,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sort": "min",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "repeatDirection": "v",
+          "scopedVars": {
+            "host": {
+              "selected": true,
+              "text": "ansible-ctrl1.kred.no:9100",
+              "value": "ansible-ctrl1.kred.no:9100"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_network_receive_errs_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) + irate(node_network_receive_drop_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "Err/Drop IN ({{device}})",
+              "refId": "A"
+            },
+            {
+              "expr": "- (irate(node_network_transmit_errs_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) + irate(node_network_transmit_drop_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]))",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "Err/Drop OUT ({{device}})",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Network Traffic | $host",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 1,
+              "format": "pps",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "Network Details",
       "type": "row"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 2,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 14,
-        "x": 0,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 18,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "min",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.10",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": "host",
-      "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(node_network_receive_bytes_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m])  > 0",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "IN ({{device}})",
-          "refId": "A"
-        },
-        {
-          "expr": "- irate(node_network_transmit_bytes_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) < 0",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "OUT ({{device}})",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Network Traffic | $host",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "decbytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 2,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 10,
-        "x": 14,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 43,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "min",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.10",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": "host",
-      "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "irate(node_network_receive_errs_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) + irate(node_network_receive_drop_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m])",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Err/Drop IN ({{device}})",
-          "refId": "A"
-        },
-        {
-          "expr": "- (irate(node_network_transmit_errs_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]) + irate(node_network_transmit_drop_total{instance=~\"$host\",device=~\"(?i)^(ens|eth).+$\"}[5m]))",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Err/Drop OUT ({{device}})",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Network Traffic | $host",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "pps",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": false,
-      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 14
       },
       "id": 22,
       "panels": [],
@@ -1457,19 +1345,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 9,
         "x": 0,
-        "y": 27
+        "y": 15
       },
-      "hiddenSeries": false,
       "id": 40,
       "legend": {
         "alignAsTable": true,
@@ -1486,23 +1368,12 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
       "percentage": false,
-      "pluginVersion": "7.5.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1564,19 +1435,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 9,
-        "y": 27
+        "y": 15
       },
-      "hiddenSeries": false,
       "id": 30,
       "legend": {
         "alignAsTable": true,
@@ -1595,23 +1460,12 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
       "percentage": false,
-      "pluginVersion": "7.5.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1682,19 +1536,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 7,
         "x": 17,
-        "y": 27
+        "y": 15
       },
-      "hiddenSeries": false,
       "id": 32,
       "legend": {
         "alignAsTable": true,
@@ -1711,23 +1559,12 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
       "percentage": false,
-      "pluginVersion": "7.5.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": "host",
       "repeatDirection": "v",
-      "scopedVars": {
-        "host": {
-          "selected": true,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        }
-      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -1792,37 +1629,27 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 27,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "linux",
     "node-exporter",
-    "ops",
-    "prometheus"
+    "ops"
   ],
   "templating": {
     "list": [
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "dhcp2.aytonda.lan:9100",
-          "value": "dhcp2.aytonda.lan:9100"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_time_seconds{job=\"$job\"},instance)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Host",
         "multi": true,
         "name": "host",
         "options": [],
-        "query": {
-          "query": "label_values(node_time_seconds{job=\"$job\"},instance)",
-          "refId": "Prometheus-host-Variable-Query"
-        },
+        "query": "label_values(node_time_seconds{job=\"$job\"},instance)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1835,25 +1662,16 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "node",
-          "value": "node"
-        },
+        "current": {},
         "datasource": "Prometheus",
         "definition": "label_values(node_boot_time_seconds,job)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Job",
         "multi": false,
         "name": "job",
         "options": [],
-        "query": {
-          "query": "label_values(node_boot_time_seconds,job)",
-          "refId": "Prometheus-job-Variable-Query"
-        },
+        "query": "label_values(node_boot_time_seconds,job)",
         "refresh": 1,
         "regex": "/(.*)/",
         "skipUrlSync": false,
@@ -1896,7 +1714,8 @@
     ]
   },
   "timezone": "",
-  "title": "Linux Metrics",
+  "title": "Linux Hosts",
   "uid": "ov0oEgdik",
-  "version": 5
+  "version": 20,
+  "description": "Basic overview of linux host metrics, based on node_exporter"
 }
