@@ -1,7 +1,7 @@
 {
   "__inputs": [
     {
-      "name": "Loki",
+      "name": "DS_LOKI",
       "label": "Loki",
       "description": "",
       "type": "datasource",
@@ -50,7 +50,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": "${DS_LOKI}",
+      "datasource": "Loki",
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -81,7 +81,7 @@
       "type": "logs"
     },
     {
-      "datasource": "${DS_LOKI}",
+      "datasource": "Loki",
       "description": "",
       "fieldConfig": {
         "defaults": {},
@@ -127,7 +127,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOKI}",
+        "datasource": "Loki",
         "definition": "label_values(host)",
         "description": null,
         "error": null,
