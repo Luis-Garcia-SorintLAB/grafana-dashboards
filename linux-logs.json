@@ -1,59 +1,36 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_LOKI",
-      "label": "Loki",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "loki",
-      "pluginName": "Loki"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "7.5.10"
-    },
-    {
-      "type": "panel",
-      "id": "logs",
-      "name": "Logs",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "loki",
-      "name": "Loki",
-      "version": "1.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1679413366567,
+  "id": 2,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "datasource": "Loki",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+      "datasource": {
+        "uid": "Loki"
       },
       "gridPos": {
         "h": 12,
@@ -64,6 +41,9 @@
       "id": 2,
       "options": {
         "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
         "showLabels": false,
         "showTime": true,
         "sortOrder": "Descending",
@@ -72,8 +52,10 @@
       "pluginVersion": "7.5.10",
       "targets": [
         {
+          "datasource": {
+            "uid": "Loki"
+          },
           "expr": "{job=\"varlogs\",host=~\"$host\"}",
-          "maxLines": null,
           "refId": "Query Logs"
         }
       ],
@@ -81,12 +63,10 @@
       "type": "logs"
     },
     {
-      "datasource": "Loki",
-      "description": "",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+      "datasource": {
+        "uid": "Loki"
       },
+      "description": "",
       "gridPos": {
         "h": 10,
         "w": 24,
@@ -96,6 +76,9 @@
       "id": 4,
       "options": {
         "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
         "showLabels": true,
         "showTime": true,
         "sortOrder": "Descending",
@@ -104,6 +87,9 @@
       "pluginVersion": "7.5.10",
       "targets": [
         {
+          "datasource": {
+            "uid": "Loki"
+          },
           "expr": "{job=\"systemd-journal\",host=~\"$host\"}",
           "refId": "Journal"
         }
@@ -113,7 +99,8 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 27,
+  "revision": 1,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [
     "log",
@@ -125,12 +112,15 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
-        "current": {},
-        "datasource": "Loki",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "uid": "Loki"
+        },
         "definition": "label_values(host)",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "Host",
@@ -143,7 +133,6 @@
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -157,6 +146,7 @@
   "timepicker": {},
   "timezone": "",
   "title": "Linux Logs",
-  "uid": "sbqq9un7z",
-  "version": 16
+  "uid": "e350e10c-be01-43e3-af92-3c5c1910560d",
+  "version": 3,
+  "weekStart": ""
 }
